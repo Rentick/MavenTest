@@ -23,4 +23,24 @@ class BonusServiceTest {
         assertEquals(expected, actual);
 
     }
+    @org.junit.jupiter.api.Test
+    void shouldCalculateRegisteredAndLimit() {
+        BonusService service = new BonusService();
+        long amount = 10006000;
+        boolean registered = false;
+        long expected = 10;
+
+        long actual = service.calculate(amount, registered);
+        assertEquals(expected, actual);
+    }
+    @org.junit.jupiter.api.Test
+    void shouldCalculateRegisteredAndExpected() {
+        BonusService service = new BonusService();
+        long amount = 100060;
+        boolean registered = false;
+        long expected = 100;
+
+        long actual = service.calculate(amount, registered);
+        assertEquals(expected, actual);
+    }
 }
